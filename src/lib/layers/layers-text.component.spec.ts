@@ -4,13 +4,14 @@ import { initTest, queryByCss } from '../../testing/helpers';
 describe('FaLayersTextComponent', () => {
   it('should render text layer', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers>
           <fa-layers-text [content]="'Test'"></fa-layers-text>
         </fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {}
 
     const fixture = initTest(HostComponent);
@@ -20,9 +21,10 @@ describe('FaLayersTextComponent', () => {
 
   it('should throw an error if text layer is used outside of fa-layers', () => {
     @Component({
-      selector: 'fa-host',
-      template: `<fa-layers-text content="Test"></fa-layers-text> `,
-    })
+    selector: 'fa-host',
+    template: `<fa-layers-text content="Test"></fa-layers-text> `,
+    standalone: false
+})
     class HostComponent {}
 
     expect(() => initTest(HostComponent)).toThrow(

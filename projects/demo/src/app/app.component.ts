@@ -22,11 +22,10 @@ import {
 import { AlternatePrefixComponent } from './alternate-prefix.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [DecimalPipe, FontAwesomeModule, AlternatePrefixComponent],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    imports: [DecimalPipe, FontAwesomeModule, AlternatePrefixComponent],
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   faBell = faBell;

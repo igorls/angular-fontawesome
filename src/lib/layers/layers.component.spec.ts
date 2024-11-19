@@ -9,15 +9,16 @@ import { FaConfig } from '../config';
 describe('FaLayersComponent', () => {
   it('should render layers icon', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers>
           <fa-icon [icon]="faUser"></fa-icon>
           <fa-icon [icon]="faCoffee"></fa-icon>
           <fa-layers-text [content]="'User with coffee'"></fa-layers-text>
         </fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       faUser = faUser;
       faCoffee = faCoffee;
@@ -30,15 +31,16 @@ describe('FaLayersComponent', () => {
 
   it('should include size class', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers size="2x">
           <fa-icon [icon]="faUser"></fa-icon>
           <fa-icon [icon]="faCoffee"></fa-icon>
           <fa-layers-text [content]="'User with coffee'"></fa-layers-text>
         </fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       faUser = faUser;
       faCoffee = faCoffee;
@@ -51,9 +53,10 @@ describe('FaLayersComponent', () => {
 
   it('should include fixed width when set explicitly', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-layers [fixedWidth]="true"></fa-layers>',
-    })
+    selector: 'fa-host',
+    template: '<fa-layers [fixedWidth]="true"></fa-layers>',
+    standalone: false
+})
     class HostComponent {}
 
     const fixture = initTest(HostComponent);
@@ -65,9 +68,10 @@ describe('FaLayersComponent', () => {
 
   it('should include fixed width when set with global config', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-layers></fa-layers>',
-    })
+    selector: 'fa-host',
+    template: '<fa-layers></fa-layers>',
+    standalone: false
+})
     class HostComponent {}
 
     const fixture = initTest(HostComponent);
@@ -79,15 +83,16 @@ describe('FaLayersComponent', () => {
 
   it('should not include fixed width when set explicitly', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers [fixedWidth]="false">
           <fa-icon [icon]="faUser"></fa-icon>
           <fa-icon [icon]="faCoffee"></fa-icon>
           <fa-layers-text [content]="'User with coffee'"></fa-layers-text>
         </fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       faUser = faUser;
       faCoffee = faCoffee;
@@ -102,8 +107,8 @@ describe('FaLayersComponent', () => {
 
   it('should allow setting custom class on the host element', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers class="custom-class" [fixedWidth]="fixedWidth" [size]="size"></fa-layers>
         <fa-layers [class.custom-class]="true" [fixedWidth]="fixedWidth" [size]="size"></fa-layers>
         <fa-layers [ngClass]="{ 'custom-class': true }" [fixedWidth]="fixedWidth" [size]="size"></fa-layers>
@@ -111,7 +116,8 @@ describe('FaLayersComponent', () => {
         <fa-layers [fixedWidth]="fixedWidth" [size]="size" [class.custom-class]="true"></fa-layers>
         <fa-layers [fixedWidth]="fixedWidth" [size]="size" [ngClass]="{ 'custom-class': true }"></fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       fixedWidth = true;
       size: SizeProp = '4x';
@@ -131,14 +137,15 @@ describe('FaLayersComponent', () => {
 
   it('should support duotone icons', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers>
           <fa-duotone-icon [icon]="faDummy"></fa-duotone-icon>
           <fa-layers-text [content]="'Dummy'"></fa-layers-text>
         </fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       faDummy = faDummy;
     }
@@ -150,8 +157,8 @@ describe('FaLayersComponent', () => {
 
   it('should support icons wrapped into ng-container', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers>
           <ng-container>
             <fa-icon [icon]="faUser"></fa-icon>
@@ -159,7 +166,8 @@ describe('FaLayersComponent', () => {
           </ng-container>
         </fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       faUser = faUser;
     }

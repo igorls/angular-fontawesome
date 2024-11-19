@@ -19,14 +19,15 @@ const queryByCss = (fixture: ComponentFixture<any>, cssQuery: string): ElementRe
 describe('FaStackItemSizeDirective', () => {
   it('should attach fa-stack-1x or fa-stack-2x classes to icons', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-stack>
           <fa-icon [icon]="faCircle" stackItemSize="2x"></fa-icon>
           <fa-icon [icon]="faUser" [inverse]="true" stackItemSize="1x"></fa-icon>
         </fa-stack>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       faUser = faUser;
       faCircle = faCircle;
@@ -40,14 +41,15 @@ describe('FaStackItemSizeDirective', () => {
 
   it('should throw an error when setting size input together with stackItemSize', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-stack>
           <fa-icon [icon]="faCircle" stackItemSize="2x"></fa-icon>
           <fa-icon [icon]="faUser" [inverse]="true" size="1x" stackItemSize="1x"></fa-icon>
         </fa-stack>
       `,
-    })
+    standalone: false
+})
     class HostComponent {
       faUser = faUser;
       faCircle = faCircle;

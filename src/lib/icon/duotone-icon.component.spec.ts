@@ -6,9 +6,10 @@ import { FaDuotoneIconComponent } from './duotone-icon.component';
 describe('FaDuotoneIconComponent', () => {
   it('should render the duotone icon', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-duotone-icon [icon]="faDummy"></fa-duotone-icon>',
-    })
+    selector: 'fa-host',
+    template: '<fa-duotone-icon [icon]="faDummy"></fa-duotone-icon>',
+    standalone: false
+})
     class HostComponent {
       faDummy = faDummy;
     }
@@ -20,9 +21,10 @@ describe('FaDuotoneIconComponent', () => {
 
   it('should allow to swap opacity of the layers', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-duotone-icon [icon]="faDummy" [swapOpacity]="true"></fa-duotone-icon>',
-    })
+    selector: 'fa-host',
+    template: '<fa-duotone-icon [icon]="faDummy" [swapOpacity]="true"></fa-duotone-icon>',
+    standalone: false
+})
     class HostComponent {
       faDummy = faDummy;
     }
@@ -34,9 +36,10 @@ describe('FaDuotoneIconComponent', () => {
 
   it('should allow to customize opacity of the primary layer', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-duotone-icon [icon]="faDummy" [primaryOpacity]="0.1"></fa-duotone-icon>',
-    })
+    selector: 'fa-host',
+    template: '<fa-duotone-icon [icon]="faDummy" [primaryOpacity]="0.1"></fa-duotone-icon>',
+    standalone: false
+})
     class HostComponent {
       faDummy = faDummy;
     }
@@ -48,9 +51,10 @@ describe('FaDuotoneIconComponent', () => {
 
   it('should allow to customize opacity of the secondary layer', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-duotone-icon [icon]="faDummy" [secondaryOpacity]="0.9"></fa-duotone-icon>',
-    })
+    selector: 'fa-host',
+    template: '<fa-duotone-icon [icon]="faDummy" [secondaryOpacity]="0.9"></fa-duotone-icon>',
+    standalone: false
+})
     class HostComponent {
       faDummy = faDummy;
     }
@@ -62,9 +66,10 @@ describe('FaDuotoneIconComponent', () => {
 
   it('should allow to customize color of the primary layer', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-duotone-icon [icon]="faDummy" primaryColor="red"></fa-duotone-icon>',
-    })
+    selector: 'fa-host',
+    template: '<fa-duotone-icon [icon]="faDummy" primaryColor="red"></fa-duotone-icon>',
+    standalone: false
+})
     class HostComponent {
       faDummy = faDummy;
     }
@@ -76,9 +81,10 @@ describe('FaDuotoneIconComponent', () => {
 
   it('should allow to customize color of the secondary layer', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-duotone-icon [icon]="faDummy" secondaryColor="red"></fa-duotone-icon>',
-    })
+    selector: 'fa-host',
+    template: '<fa-duotone-icon [icon]="faDummy" secondaryColor="red"></fa-duotone-icon>',
+    standalone: false
+})
     class HostComponent {
       faDummy = faDummy;
     }
@@ -90,9 +96,10 @@ describe('FaDuotoneIconComponent', () => {
 
   it('should throw if specified icon is not a Duotone icon', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<fa-duotone-icon [icon]="faUser"></fa-duotone-icon>',
-    })
+    selector: 'fa-host',
+    template: '<fa-duotone-icon [icon]="faUser"></fa-duotone-icon>',
+    standalone: false
+})
     class HostComponent {
       faUser = faUser;
     }
@@ -109,9 +116,10 @@ describe('FaDuotoneIconComponent', () => {
 
   it('should be able to create component dynamically', () => {
     @Component({
-      selector: 'fa-host',
-      template: '<ng-container #host></ng-container>',
-    })
+    selector: 'fa-host',
+    template: '<ng-container #host></ng-container>',
+    standalone: false
+})
     class HostComponent {
       @ViewChild('host', { static: true, read: ViewContainerRef }) container: ViewContainerRef;
 

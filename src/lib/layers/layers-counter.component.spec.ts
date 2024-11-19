@@ -4,13 +4,14 @@ import { initTest, queryByCss } from '../../testing/helpers';
 describe('FaLayersCounterComponent', () => {
   it('should render counter layer', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers>
           <fa-layers-counter [content]="'Test'"></fa-layers-counter>
         </fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {}
 
     const fixture = initTest(HostComponent);
@@ -20,9 +21,10 @@ describe('FaLayersCounterComponent', () => {
 
   it('should throw an error if counter layer is used outside of fa-layers', () => {
     @Component({
-      selector: 'fa-host',
-      template: `<fa-layers-counter content="300"></fa-layers-counter> `,
-    })
+    selector: 'fa-host',
+    template: `<fa-layers-counter content="300"></fa-layers-counter> `,
+    standalone: false
+})
     class HostComponent {}
 
     expect(() => initTest(HostComponent)).toThrow(
@@ -32,13 +34,14 @@ describe('FaLayersCounterComponent', () => {
 
   it('should include position class', () => {
     @Component({
-      selector: 'fa-host',
-      template: `
+    selector: 'fa-host',
+    template: `
         <fa-layers>
           <fa-layers-counter [position]="'bottom-left'" [content]="'Test'"></fa-layers-counter>
         </fa-layers>
       `,
-    })
+    standalone: false
+})
     class HostComponent {}
 
     const fixture = initTest(HostComponent);

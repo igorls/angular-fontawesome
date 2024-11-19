@@ -3,11 +3,10 @@ import { FaConfig, FaIconComponent, FaIconLibrary } from '@fortawesome/angular-f
 import { faBellSlash, faHandPaper, faUser } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
-  selector: 'app-alternate-prefix',
-  standalone: true,
-  imports: [FaIconComponent],
-  templateUrl: './alternate-prefix.component.html',
-  providers: [FaConfig],
+    selector: 'app-alternate-prefix',
+    imports: [FaIconComponent],
+    templateUrl: './alternate-prefix.component.html',
+    providers: [FaConfig]
 })
 export class AlternatePrefixComponent {
   constructor(faConfig: FaConfig, library: FaIconLibrary) {

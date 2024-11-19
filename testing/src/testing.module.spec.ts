@@ -6,8 +6,9 @@ import { ADD_ICON_MESSAGE } from './icon/mock-icon-library.service';
 import { FontAwesomeTestingModule } from './testing.module';
 
 @Component({
-  selector: 'fa-host',
-  template: '<fa-icon icon="someicon"></fa-icon>',
+    selector: 'fa-host',
+    template: '<fa-icon icon="someicon"></fa-icon>',
+    standalone: false
 })
 class HostComponent {}
 
